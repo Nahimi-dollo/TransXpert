@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ajout.AjoutFragment" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="343dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="52dp"
+                android:hint="@string/ajouter_un_transformateur"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/designation"
+                android:layout_width="314dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="16dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/designation"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                tools:ignore="LabelFor" />
+
+            <Spinner
+                android:id="@+id/region_spinner"
+                android:layout_width="315dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:hint="@string/region"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.461"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/designation" />
+
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="308dp"
+                android:layout_height="113dp"
+                android:layout_marginTop="20dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/desc_tr"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.448"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/region_spinner"
+                tools:ignore="LabelFor" />
+
+            <LinearLayout
+                android:layout_width="309dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/latitude"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/latitude"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.429"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/longtitude"
+                    tools:ignore="LabelFor" />
+
+                <Button
+                    android:id="@+id/btn_get_latitude"
+                    android:layout_width="66dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/locate"
+                    android:textSize="7sp"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/longtitude"
+                android:layout_width="307dp"
+                android:layout_height="59dp"
+                android:layout_marginTop="20dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/longtitude"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.417"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/description"
+                tools:ignore="LabelFor" />
+
+            <LinearLayout
+                android:layout_width="309dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/image_found"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/image"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.417"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/description"
+                    tools:ignore="LabelFor" />
+
+                <Button
+                    android:id="@+id/btn_get_image"
+                    android:layout_width="66dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/locate"
+                    android:textSize="7sp"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+
+
+
+            <EditText
+                android:id="@+id/ligne"
+                android:layout_width="311dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/ligne"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.413"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/latitude"
+                tools:ignore="LabelFor" />
+
+            <EditText
+                android:id="@+id/puissance"
+                android:layout_width="312dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="@string/puissance"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ligne"
+                tools:ignore="LabelFor" />
+
+            <Button
+                android:id="@+id/validation_ajout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="70dp"
+                android:text="@string/valider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/puissance" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

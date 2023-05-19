@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.garoua.transxpert10.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_list"
+        android:name="com.garoua.transxpert10.ui.liste.ListeFragment"
+        android:label="@string/list"
+        tools:layout="@layout/fragment_liste" />
+
+    <fragment
+        android:id="@+id/navigation_ajout"
+        android:name="com.garoua.transxpert10.ui.ajout.AjoutFragment"
+        android:label="@string/ajout"
+        tools:layout="@layout/fragment_ajout" />
+
+    <fragment
+        android:id="@+id/navigation_profil"
+        android:name="com.garoua.transxpert10.ui.profil.ProfilFragment"
+        android:label="@string/profil"
+        tools:layout="@layout/fragment_ajout" />
+</navigation>

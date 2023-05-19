@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">transXpert 1.0</string>
+    <string name="title_activity_dashboard">dashboard</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="list">Liste</string>
+    <string name="ajout">Ajouter</string>
+    <string name="profil">Profil</string>
+    <string name="valider">Valider</string>
+    <string name="puissance">Puissance</string>
+    <string name="longtitude">Longtitude</string>
+    <string name="ligne">Ligne</string>
+    <string name="latitude">latitude</string>
+    <string name="region">Region</string>
+    <string name="designation">Designation</string>
+    <string name="ajouter_un_transformateur">Ajouter un transformateur</string>
+    <string name="title">title</string>
+    <string name="region_">region</string>
+    <string name="vas_y">Vas y</string>
+    <string name="rechercher">Rechercher</string>
+    <string name="desc_tr">Decrivez la localisation du transformateur</string>
+    <string name="locate">locate</string>
+    <string name="image">image</string>
+    <string name="titre">Titre</string>
+    <string name="voir_sur_maps">Voir sur Maps</string>
+    <string name="nom_d_utilisateur">Email de connection</string>
+    <string name="se_connecter">Se connecter</string>
+
+    <string-array name="region_list">
+        <item>Extreme-Nord</item>
+        <item>Nord</item>
+        <item>Adamaoua</item>
+        <item>Centre</item>
+        <item>Littoral</item>
+        <item>Est</item>
+        <item>Ouest</item>
+        <item>Sud</item>
+        <item>Nord-ouest</item>
+        <item>Sud-ouest</item>
+    </string-array>
+</resources>

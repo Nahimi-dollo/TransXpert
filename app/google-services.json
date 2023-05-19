@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1060342618845",
+    "project_id": "transxpert-c77f6",
+    "storage_bucket": "transxpert-c77f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060342618845:android:73582078db6a8795a71934",
+        "android_client_info": {
+          "package_name": "com.garoua.transxpert10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1060342618845-b7horkl997j5qvta6v3nftp4b82eqk9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEhoGklyZabXaQodoa-o2oQ9pWHKTCXOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1060342618845-b7horkl997j5qvta6v3nftp4b82eqk9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
