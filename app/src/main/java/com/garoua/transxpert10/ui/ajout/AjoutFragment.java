@@ -40,10 +40,20 @@ import com.garoua.transxpert10.R;
 import com.garoua.transxpert10.databinding.FragmentAjoutBinding;
 import com.garoua.transxpert10.trans_item;
 import com.garoua.transxpert10.ui.dashboard.DashboardViewModel;
+import com.garoua.transxpert10.ui.liste.ListViewAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -53,6 +63,7 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 
@@ -61,7 +72,6 @@ public class AjoutFragment extends Fragment{
     private static final int PERMISSION_REQUEST_CODE = 1;
     private static final int REQUEST_CODE_SELECT_IMAGE = 1;
 
-    private FragmentAjoutBinding binding;
     EditText designation;
     EditText description;
     EditText latitude;
@@ -147,12 +157,9 @@ public class AjoutFragment extends Fragment{
         });
 
 
+        // Logique du spinner
 
-
-
-            // Logique du spinner
-
-            // création d'un ArrayAdapter pour le sipnner
+        // création d'un ArrayAdapter pour le sipnner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.region_list, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner_region.setAdapter(adapter);
@@ -170,8 +177,6 @@ public class AjoutFragment extends Fragment{
                 // code à exécuter lorsqu'aucun élément n'est sélectionné
             }
         });
-
-
 
 
 
@@ -195,6 +200,67 @@ public class AjoutFragment extends Fragment{
                         public void onClick(DialogInterface dialog, int id) {
                             // L'utilisateur a cliqué sur Accepter
 
+                            // Logique pour imposer a un chef d'agence de n'ajouter que les transfo dans sa region
+                            FirebaseFirestore db = FirebaseFirestore.getInstance();
+                            FirebaseAuth auth = FirebaseAuth.getInstance();
+                            FirebaseUser user = auth.getCurrentUser();
+
+                            assert user != null;
+                            String value = user.getEmail();
+                            CollectionReference prof = db.collection("profil");
+                            // Accéder à la collection "transformateur"
+                            CollectionReference notesRef = db.collection("transformateur");
+                            CollectionReference agence = db.collection("agence");
+
+                            Query query = prof.whereEqualTo("email", value);
+
+
+                            query.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                @Override
+                                public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                    if(!queryDocumentSnapshots.isEmpty()){
+
+                                        DocumentSnapshot doc = queryDocumentSnapshots.getDocuments().get(0);
+
+                                        //String nom = doc.getString("nom");
+                                        //String email = doc.getString("email");
+                                        String region_ = doc.getString("region");
+                                        String fonction = doc.getString("fonction");
+
+                                        Query query_agence = agence.whereEqualTo("nom_chef", doc.getString("nom"));
+                                        query_agence.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                            @Override
+                                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                                if(!queryDocumentSnapshots.isEmpty()){
+
+                                                    DocumentSnapshot docc = queryDocumentSnapshots.getDocuments().get(0);
+
+                                                    // recuperation des elements de la region specifie
+                                                    if (Objects.equals(fonction, "directeur generale")){
+
+                                                    }else if (Objects.equals(fonction, "chef d'agence")){
+                                                        region = docc.getString("nom");
+                                                        Toast.makeText(getContext(), "La region a ete modifie en votre region", Toast.LENGTH_SHORT).show();
+                                                    }else{
+                                                        Toast.makeText(getContext(), "Une erreur est survenu", Toast.LENGTH_SHORT).show();
+                                                    }
+
+                                                }
+                                            }
+                                        });
+
+
+                                    }
+                                }
+                            });
+
+
+
+
+
+
+
+
                             //Logique d'ajout
 
                             // Demarrage du dialogue de chargement
@@ -207,7 +273,7 @@ public class AjoutFragment extends Fragment{
                             dialog_.show();
 
                             // Debut de la logique d'ajout
-                            FirebaseFirestore db = FirebaseFirestore.getInstance();
+                            //FirebaseFirestore db = FirebaseFirestore.getInstance();
                             FirebaseStorage storage = FirebaseStorage.getInstance();
                             StorageReference storageRef = storage.getReference().child("transfoImages");
 

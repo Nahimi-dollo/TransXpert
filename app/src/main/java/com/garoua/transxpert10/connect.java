@@ -9,9 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class connect extends AppCompatActivity {
 
@@ -36,15 +42,21 @@ public class connect extends AppCompatActivity {
                     Toast.makeText(connect.this, "Veillez remplir tous les champs", Toast.LENGTH_SHORT).show();
                 }else{
                     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                    // Accéder à l'instance de Firestore
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                    // Accéder à la collection "transformateur"
+                    CollectionReference notesRef = db.collection("profil");
 
                     firebaseAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                             .addOnCompleteListener(task -> {
                                 if (task.isSuccessful()) {
                                     // L'utilisateur est connecté avec succès
-                                    //firebaseAuth.setPersistenceEnabled(true);
-                                    FirebaseUser user = firebaseAuth.getCurrentUser();
                                     Intent dashbordActivity = new Intent(connect.this, dashboard.class);
                                     startActivity(dashbordActivity);
+
+
+
                                 } else {
                                     // Une erreur s'est produite
                                     Exception e = task.getException();

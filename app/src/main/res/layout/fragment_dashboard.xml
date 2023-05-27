@@ -16,17 +16,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.977" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="23dp"
+        android:layout_height="11dp"
+        android:layout_marginEnd="28dp"
+        android:rotation="-70"
+        android:text="Sud"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/chart"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageProfil"
         android:layout_width="150dp"
         android:layout_height="105dp"
         android:layout_marginTop="28dp"
-        android:src="@drawable/moi"
+        android:src="@drawable/profil_circle"
         app:civ_border_color="#FFFFFF"
         app:civ_border_width="@dimen/cardview_default_elevation"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintBottom_toTopOf="@+id/nom_profil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,24 +45,24 @@
         app:layout_constraintVertical_bias="0.285" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/nom_profil"
         android:layout_width="297dp"
         android:layout_height="29dp"
         android:layout_marginBottom="52dp"
-        android:text="Bahani vissiley Thierry"
+        android:text="..............."
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintBottom_toBottomOf="@+id/fonction_profil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/fonction_profil"
         android:layout_width="331dp"
         android:layout_height="52dp"
         android:layout_marginBottom="488dp"
-        android:text="Directeur générale"
+        android:text=".............."
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
@@ -61,47 +72,134 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="200dp"
-        android:layout_height="120dp"
+        android:layout_width="195dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="148dp"
         android:text="Transformateurs par region"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.331" />
+        app:layout_constraintTop_toBottomOf="@+id/fonction_profil" />
 
-    <TableLayout
-        android:layout_width="335dp"
-        android:layout_height="152dp"
-        android:elevation="@dimen/cardview_default_elevation"
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/chart"
+        android:layout_width="349dp"
+        android:layout_height="153dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.429" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/profil" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="36dp"
+        android:layout_height="14dp"
+        android:rotation="-70"
+        android:text="Nord"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/chart"
+        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="Tabel" />
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="31dp"
+        android:layout_height="15dp"
+        android:rotation="-70"
+        android:text="Extreme-nord"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/chart"
+        app:layout_constraintEnd_toStartOf="@+id/textView11" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="Tabel" />
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="31dp"
+        android:layout_height="15dp"
+        android:rotation="-80"
+        android:text="Adamaoua"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/chart"
+        app:layout_constraintEnd_toStartOf="@+id/textView12" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="Tabel" />
-    </TableLayout>
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="30dp"
+        android:layout_height="13dp"
+        android:layout_marginEnd="12dp"
+        android:rotation="-70"
+        android:text="Centre"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/chart"
+        app:layout_constraintEnd_toStartOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="21dp"
+        android:layout_height="17dp"
+        android:rotation="-70"
+        android:text="Est"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/chart"
+        app:layout_constraintEnd_toStartOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="24dp"
+        android:layout_height="12dp"
+        android:rotation="-70"
+        android:text="Ouest"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/chart"
+        app:layout_constraintEnd_toStartOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="32dp"
+        android:layout_height="14dp"
+        android:rotation="-70"
+        android:text="Nord-Ouest"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView14"
+        app:layout_constraintEnd_toStartOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="27dp"
+        android:layout_height="14dp"
+        android:rotation="-70"
+        android:text="Sud-Ouest"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView14"
+        app:layout_constraintEnd_toStartOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="39dp"
+        android:layout_height="16dp"
+        android:rotation="-70"
+        android:text="Littoral"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView14"
+        app:layout_constraintEnd_toStartOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/btn_profil_image"
+        android:layout_width="52dp"
+        android:layout_height="34dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/nom_profil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageProfil"
+        app:layout_constraintVertical_bias="0.755" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

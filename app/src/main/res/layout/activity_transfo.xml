@@ -8,8 +8,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/image_transfo"
-        android:layout_width="468dp"
-        android:layout_height="302dp"
+        android:layout_width="466dp"
+        android:layout_height="334dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,13 +25,27 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent">
 
 
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="166dp"
+            android:layout_height="46dp"
+            android:text="Design" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:text="..  | .. | .. | .. |  .." />
+
         <TextView
             android:id="@+id/transfoActivity_designation"
-            android:layout_width="314dp"
+            android:layout_width="309dp"
             android:layout_height="wrap_content"
+            android:paddingTop="20dp"
             android:text="@string/titre"
             android:textSize="30sp" />
 
@@ -45,15 +59,15 @@
 
         <TextView
             android:id="@+id/transfoActivity_puissance"
-            android:layout_width="313dp"
-            android:layout_height="45dp"
-            android:textSize="20sp"
-            android:text="@string/puissance" />
+            android:layout_width="312dp"
+            android:layout_height="wrap_content"
+            android:text="@string/puissance"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/transfoActivity_description"
-            android:layout_width="321dp"
-            android:layout_height="190dp"
+            android:layout_width="312dp"
+            android:layout_height="110dp"
             android:layout_marginTop="10dp"
             android:text="@string/desc_tr"
             android:textSize="14sp" />
@@ -64,6 +78,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="@string/voir_sur_maps" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:barrierDirection="top" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

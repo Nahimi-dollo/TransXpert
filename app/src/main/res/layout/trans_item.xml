@@ -20,18 +20,19 @@
         app:srcCompat="@drawable/trans" />
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="76dp"
+        android:layout_width="303dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="15sp">
+        android:paddingLeft="15sp"
+        android:textAlignment="center">
 
         <TextView
             android:id="@+id/text_title"
             android:layout_width="206dp"
             android:layout_height="wrap_content"
             android:hint="@string/title"
-            android:paddingTop="10sp"
-            android:textSize="16sp"
+            android:paddingTop="20sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
